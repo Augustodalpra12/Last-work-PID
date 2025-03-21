@@ -1,7 +1,2 @@
 # Ignorar todos os arquivos .txt
 *.txt
-
-# Ignorar pastas A, B e C em qualquer nível do repositório
-# Resultados/
-# training/
-# img/
