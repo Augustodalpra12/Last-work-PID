@@ -7,12 +7,10 @@ from skimage import color
 #                     IMAGEM
 #======================================================================
 
-# Abrir a imagem e converter para escala de cinza usando skimage
-img = Image.open('img/triangulo_amarelo.jpg')
-img_gray = color.rgb2gray(np.array(img))
-
-# Normalizar para valores entre 0 e 255
-img_gray = (img_gray * 255).astype(np.uint8)
+# Abrir a imagem e converter para escala de cinza
+img_gray = Image.open('img/triangulo_colorido.png').convert('L')
+# Converter para numpy array e normalizar entre 0 e 255
+img_gray = np.array(img_gray).astype(np.uint8)  # Já está entre 0 e 255, então não precisa multiplicar
 
 #======================================================================
 #                     IMAGEM
@@ -266,8 +264,8 @@ binary_otsu = apply_threshold(img_gray, threshold_value)
 #  marcadores watershed
 def get_markers(image):
     markers = np.zeros_like(image, dtype=np.int32)
-    markers[image < np.percentile(image, 50)] = 1  # Região de fundo
-    markers[image > np.percentile(image, 50)] = 2  # Região de objeto
+    markers[image < np.percentile(image, 70)] = 1  # Região de fundo
+    markers[image > np.percentile(image, 30)] = 2  # Região de objeto
     return markers
 
 

@@ -29,7 +29,7 @@ os máximos, caso contrário, escolha k como limiar.
 - A partir de quando a agua de diferentes vales se encontram, é criado barreiras para separar as regiões, representando a 
 segmentação da imagem.
 
-# 3 utilize erosao e dilatação / ai criar a estrategia para separar as imagens # tentar abertura
+# 3 utilize erosao e dilatação / ai criar a estrategia para separar as imagens 
 
 # Cadeia de Freeman
 - Acha o primeiro ponto

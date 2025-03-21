@@ -89,12 +89,11 @@ gray_image = load_image(image_path)
 # Processamento
 binarized = binarize(gray_image)
 eroded = erode(binarized)
-#eroded = erode(eroded_2)
-dilated = dilate(eroded, kernel_size=3)  # Dilatação mais forte para unir objetos quebrados
+dilated = dilate(eroded, kernel_size= 3)  # Dilatação mais forte para unir objetos quebrados
 labeled, obj_count = label_objects(dilated)
 
 # Exibir resultados
 show_results(gray_image, binarized, eroded, dilated, labeled, obj_count)
 
-# erosão 3 e dilatação 5 a imagem 7 fica certa, imagem 5 fica ruim
-# erosão 3 e dilatação 3 a imagem 5 fica certa, imagem 7 fica ruim
+#  dilatação 5 a imagem 7 fica certa, imagem 5 fica ruim
+#  dilatação 3 a imagem 5 fica certa, imagem 7 fica ruim

@@ -71,7 +71,7 @@ def gerar_cadeia_freeman(contorno): # percorre os pontos, e calcula a diferença
     cadeia = []
     for i in range(1, len(contorno)):
         dy, dx = contorno[i][0] - contorno[i - 1][0], contorno[i][1] - contorno[i - 1][1]
-        print("Primeiro contorno", contorno[i][0], "Segundo contorno", contorno[i-1][0])
+        #print("Primeiro contorno", contorno[i][0], "Segundo contorno", contorno[i-1][0])
         if (dy, dx) in freeman_dirs:
             cadeia.append(freeman_dirs[(dy, dx)])
             #print(freeman_dirs[(dy, dx)])
@@ -86,7 +86,10 @@ def gerar_cadeia_freeman(contorno): # percorre os pontos, e calcula a diferença
 # img = Image.open("img/quadrado.png")
 
 # quadrado paint
-img = Image.open("img/quadrado_paint.png")
+# img = Image.open("img/quadrado_paint.png")
+
+# quadrado fino
+img = Image.open("img/quadrado_fino.png")
 
 
 binaria = binarizar_imagem(img)
